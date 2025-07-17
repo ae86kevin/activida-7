@@ -34,14 +34,11 @@ while seleccion != "0":
                 except ValueError:
                     print("el dato deber ser en numeros")
             carrera =input("Carrera: ")
-            estudiantes[carnet] = {
-                "nombre": nombre,
-                "edad": edad,
-                "carrera": carrera,
 
-            }
 
-            cursos ={}
+
+
+
             print("Cuantos cursos desea registrar")
             try:
                 cantidadCursos = int(input())
@@ -49,34 +46,52 @@ while seleccion != "0":
                 print("Dato incorrecto")
                 continue
 
-            for c in range(cantidadCursos):
-                print(f"\nIngrese los datos del curso {c + 1}")
-                nombreCurso: int(input("Nombre: "))
-                while True:
-                    try:
-                        codigoDecurso = int(input("ingrese el codigo: "))
-                        break
-                    except ValueError:
-                        print("Dato incorrecto")
+            for i in range(cantidadCursos):
+                print(f"\n Ingrese el dato de curso {i+1}")
+                codigoCurso = input("Codigo curso: ")
+                nombreCurso = input("Nombre del curso: ")
+                notaDeTarea= input("nota de la  tarea: ")
+                notaDeParcial= input("nota de parcial ")
+                notaDeProyecto= input("nota de proyecto")
 
-                while True:
-                    try:
-                        notaDeParcial = int(input("Nota del parcial: "))
-                        break
-                    except ValueError:
-                        print("Dato incorrecto")
+                estudiantes[carnet] ={
+                    "nombre": nombre,
+                    "edad": edad,
+                    "carrera": carrera,
+                    "codigoCurso": {
+                        "nombreCurso": nombreCurso,
+                        "notaDeTarea": notaDeTarea,
+                        "notaDeParcial": notaDeParcial,
+                        "notaDeProyecto": notaDeProyecto,
 
-                while True:
-                    try:
-                        notaDeProyecto = int(input("Nota del proyecto: "))
-                        break
-                    except ValueError:
-                        print("Dato incorrecto")
+                    }
+                }
 
-                        cursos[codigoCurso] = {
-                            "notaDeparcial":notaDeParcial,
 
-                        }
+
+
+    if seleccion == "2":
+        print("Mostar todos los estudiantes y cursos")
+        for carnet,datos in estudiantes.items():
+            print(f"carnet: {carnet}")
+            print(f"nombre: {datos["nombre"]}")
+            print(f"carrera: {datos["carrera"]}")
+            print(f"codigo del curso: {datos['codigoCurso']['nombreCurso']}")
+            print(f"nota de tarea: {datos['codigoCurso']['notaDeTarea']}")
+            print(f"nora de parcial: {datos['codigoCurso']['notaDeParcial']}")
+            print(f"nota de proyecto: {datos['codigoCurso']['notaDeProyecto']}")
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
