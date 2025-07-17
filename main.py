@@ -51,10 +51,7 @@ while seleccion != "0":
 
             for c in range(cantidadCursos):
                 print(f"\nIngrese los datos del curso {c + 1}")
-                codigoCurso = input("Codigo curso: ")
-                nombreCurso = input("Nombre del curso: ")
-                notaDetarea = input("Nota de tarea: ")
-
+                nombreCurso: int(input("Nombre: "))
                 while True:
                     try:
                         codigoDecurso = int(input("ingrese el codigo: "))
