@@ -41,25 +41,61 @@ while seleccion != "0":
 
             }
 
-            print("Cuantos cursos desea registar")
+            cursos ={}
+            print("Cuantos cursos desea registrar")
             try:
-                canridadCursos=int(input())
+                cantidadCursos = int(input())
             except ValueError:
                 print("Dato incorrecto")
                 continue
 
-            for c in range (canridadCursos):
-                print(f"\n Ingrese el dato de curso {c+1}")
-                nombreCurso =input("Nombre Del curso: ")
-                notaDetarea =input("Nota del curso: ")
-                notaDeParcial= int("Nota del parcial: ")
-                notaDeProyecto= int("Nota del proyecto: ")
+            for c in range(cantidadCursos):
+                print(f"\nIngrese los datos del curso {c + 1}")
+                codigoCurso = input("Codigo curso: ")
+                nombreCurso = input("Nombre del curso: ")
+                notaDetarea = input("Nota de tarea: ")
 
-            estudiantes[nombreCurso] = {
-                "notaDetarea": notaDetarea,
-                "notaDeParcial": notaDeParcial,
-                "notaDeProyecto": notaDeProyecto,
-            }
+                while True:
+                    try:
+                        codigoDecurso = int(input("ingrese el codigo: "))
+                        break
+                    except ValueError:
+                        print("Dato incorrecto")
+
+                while True:
+                    try:
+                        notaDeParcial = int(input("Nota del parcial: "))
+                        break
+                    except ValueError:
+                        print("Dato incorrecto")
+
+                while True:
+                    try:
+                        notaDeProyecto = int(input("Nota del proyecto: "))
+                        break
+                    except ValueError:
+                        print("Dato incorrecto")
+
+                        cursos[codigoCurso] = {
+                            "notaDeparcial":notaDeParcial,
+
+                        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
