@@ -67,19 +67,43 @@ while seleccion != "0":
                     }
                 }
 
-
-
-
     if seleccion == "2":
         print("Mostar todos los estudiantes y cursos")
-        for carnet,datos in estudiantes.items():
+        for carnet, datos in estudiantes.items():
             print(f"carnet: {carnet}")
             print(f"nombre: {datos["nombre"]}")
             print(f"carrera: {datos["carrera"]}")
-            print(f"codigo del curso: {datos['codigoCurso']['nombreCurso']}")
-            print(f"nota de tarea: {datos['codigoCurso']['notaDeTarea']}")
-            print(f"nora de parcial: {datos['codigoCurso']['notaDeParcial']}")
-            print(f"nota de proyecto: {datos['codigoCurso']['notaDeProyecto']}")
+            for curso in datos["codigoCurso"]["nombreCurso"]:
+                print(f"codigo del curso: {datos['codigoCurso']['nombreCurso']}")
+                print(f"nota de tarea: {datos['codigoCurso']['notaDeTarea']}")
+                print(f"nora de parcial: {datos['codigoCurso']['notaDeParcial']}")
+                print(f"nota de proyecto: {datos['codigoCurso']['notaDeProyecto']}")
+
+
+
+    elif seleccion == "3":
+        print("Ingrese el carnet del estudiante")
+        buscar = input()
+        if buscar in estudiantes:
+            print(f"carnet: {buscar}")
+            print(f"nombre: {datos['nombre']}")
+            print(f"edad: {datos['edad']}")
+            print(f"carrera: {datos['carrera']}")
+            print("cursos")
+            for curso in datos["cursos"]:
+                print(f"codigo del curso: {curso['codigoCurso']}")
+                print(f"nombre del curso: {curso['nombreCurso']}")
+                print(f"nota de tarea: {curso['notaDeTarea']}")
+                print(f"nora de parcial: {curso['notaDeParcial']}")
+                print(f"nota del proyecto: {curso['notaDeProyecto']}")
+
+            else:
+                print("No se encontr<UNK> el estudiante")
+
+
+
+
+
 
 
 
